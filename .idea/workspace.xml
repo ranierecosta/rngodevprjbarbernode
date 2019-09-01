@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24cc2db7-d349-4507-bb75-4a9e0cb3f74a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/20190830013737-create-users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/20190830013737-create-users.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +89,9 @@
       <workItem from="1567189156580" duration="89000" />
       <workItem from="1567189958087" duration="1034000" />
       <workItem from="1567193779144" duration="150000" />
+      <workItem from="1567282664332" duration="111000" />
+      <workItem from="1567282786814" duration="93000" />
+      <workItem from="1567282893276" duration="85000" />
     </task>
     <servers />
   </component>
