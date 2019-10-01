@@ -6,13 +6,17 @@ import Appointment from '../models/Appointment';
 
 class AppointmentController {
   /**
-   * Listar todos agendamentos - TESTAR
+   * Listar todos agendamentos
    */
   async index(req, res) {
+    const { page = 1 } = req.query;
+
     const appointments = await Appointment.findAll({
       where: { user_id: req.userId, canceled_at: null },
       order: ['date'],
       attributes: ['id', 'date'],
+      limit: 20,
+      offset: (page - 1) * 20,
       include: [
         {
           model: User,
@@ -61,7 +65,7 @@ class AppointmentController {
     }
 
     /**
-     * Check for past dates - TESTAR
+     * Check for past dates
      */
     const hourStart = startOfHour(parseISO(date));
 
@@ -70,7 +74,7 @@ class AppointmentController {
     }
 
     /**
-     * Check date availability - TESTAR
+     * Check date availability
      */
     const checkAvailability = await Appointment.findOne({
       where: {
