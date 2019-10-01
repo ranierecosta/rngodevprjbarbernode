@@ -13,6 +13,12 @@ class UserController {
         .min(6),
     });
 
+    if (req.body.password.length < 6) {
+      return res
+        .status(400)
+        .json({ error: 'Password must to have more than 6 characters' });
+    }
+
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
