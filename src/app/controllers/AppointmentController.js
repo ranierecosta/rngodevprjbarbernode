@@ -49,6 +49,15 @@ class AppointmentController {
 
     const { provider_id, date } = req.body;
 
+    /**
+     * Check if provider_id is different from the user
+     */
+    if (!(provider_id !== req.userId)) {
+      return res
+        .status(401)
+        .json({ error: 'The user must be different from provider' });
+    }
+
     /*
      * Check if provider_id is a provider
      */
