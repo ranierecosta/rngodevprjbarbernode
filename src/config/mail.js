@@ -4,7 +4,7 @@ export default {
   secure: false,
   auth: {
     user: '3de904600e7b94',
-    pass: '3de904600e7b94',
+    pass: '65d5251514a6a8',
   },
   default: {
     from: 'Team GoBarber <noreply@gobarber.com>',
