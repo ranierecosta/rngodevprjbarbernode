@@ -30,13 +30,14 @@ class UserController {
       return res.status(400).json({ error: 'User already exists.' });
     }
 
-    const { id, name, email, provider } = await User.create(req.body);
+    const { id, name, email, provider, admin } = await User.create(req.body);
 
     return res.json({
       id,
       name,
       email,
       provider,
+      admin,
     });
   }
 
@@ -59,7 +60,7 @@ class UserController {
 
     await user.update(req.body);
 
-    const { id, name, avatar } = await User.findByPk(req.userId, {
+    const { id, name, avatar, admin } = await User.findByPk(req.userId, {
       include: [
         {
           model: File,
@@ -74,6 +75,7 @@ class UserController {
       name,
       email,
       avatar,
+      admin,
     });
   }
 }
