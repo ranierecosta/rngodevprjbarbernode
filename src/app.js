@@ -9,6 +9,7 @@ import 'express-async-errors';
 
 import routes from './routes';
 import sentryConfig from './config/sentry';
+import Queue from './lib/Queue';
 
 import './database';
 
@@ -17,6 +18,7 @@ class App {
     this.server = express();
 
     Sentry.init(sentryConfig);
+    Queue.processQueue();
 
     this.middlewares();
     this.routes();

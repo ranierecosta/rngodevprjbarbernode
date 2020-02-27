@@ -1,11 +1,10 @@
 {
-  "name": "GoBarber",
+  "name": "GoBarber API",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "startDev": "nodemon src/server.js",
-    "startQueue": "nodemon src/queue.js",
     "updateProject": "git pull"
   },
   "dependencies": {
