@@ -9,6 +9,12 @@ import databaseConfig from '../config/database';
 
 const models = [User, File, Appointment];
 
+const mongoOptions = {
+  useNewUrlParser: true,
+  useFindAndModify: true,
+  useUnifiedTopology: true,
+};
+
 class Database {
   constructor() {
     this.init();
@@ -24,11 +30,10 @@ class Database {
   }
 
   mongo() {
-    this.mongoConnection = mongoose.connect(process.env.MONGO_URL, {
-      useNewUrlParser: true,
-      useFindAndModify: true,
-      useUnifiedTopology: true,
-    });
+    this.mongoConnection = mongoose.connect(
+      process.env.MONGO_URL,
+      mongoOptions
+    );
   }
 }
 
