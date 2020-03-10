@@ -1,10 +1,10 @@
-FROM node:lts-alpine
+FROM node:10-alpine
 
 RUN mkdir -p /home/node/api/node_modules && chown -R node:node /home/node/api
 
 WORKDIR /home/node/api
 
-COPY package.json yarn.* ./
+COPY package.json yarn.lock ./
 
 USER node
 
