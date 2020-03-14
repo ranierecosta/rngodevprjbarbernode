@@ -10,7 +10,7 @@ services:
     ports:
       - '3333:3333'
     environment:
-      DB_HOST: host.docker.internal
+      DB_HOST: ${DB_HOST}
       DB_USER: ${DB_USER}
       DB_PASS: ${DB_PASS}
     depends_on:
@@ -22,11 +22,12 @@ services:
 
   gobarber-redis:
     image: redis:alpine
+    ports:
+      - '6379:6379'
     container_name: gobarber-redis
     environment:
       - ALLOW_EMPTY_PASSWORD=no
       - REDIS_PASSWORD=${REDIS_PASSWORD}
-
     volumes:
       - gobarber-redis-data:/data
     networks:
@@ -34,6 +35,8 @@ services:
 
   gobarber-mongo:
     image: mongo
+    ports:
+      - '27017:27017'
     container_name: gobarber-mongo
     environment:
       - MONGO_URL=${MONGO_URL}
@@ -44,6 +47,8 @@ services:
 
   gobarber-postgres:
     image: postgres:11
+    ports:
+      - '5432:5432'
     container_name: gobarber-postgres
     environment:
       - POSTGRES_DB=${DB_NAME}
